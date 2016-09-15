@@ -1,0 +1,32 @@
+<div class="ui-select-container ui-select-multiple selectize selectize-container selectize-container-multi"
+     ng-class="{'selectize-container-active selectize-dropdown-open open': $select.open,
+                'selectize-container-disabled': $select.disabled}">
+  <ul class="selectize-choices">
+    <span class="ui-select-match"></span>
+    <li class="selectize-search-field">
+      <input
+        type="text"
+        autocomplete="false"
+        autocorrect="off"
+        autocapitalize="off"
+        spellcheck="false"
+        role="combobox"
+        aria-expanded="true"
+        aria-owns="ui-select-choices-{{ $select.generatedId }}"
+        aria-label="{{ $select.baseTitle }}"
+        aria-activedescendant="ui-select-choices-row-{{ $select.generatedId }}-{{ $select.activeIndex }}"
+        class="selectize-input ui-select-search"
+        placeholder="{{$selectMultiple.getPlaceholder()}}"
+        ng-disabled="$select.disabled"
+        ng-hide="$select.disabled"
+        ng-model="$select.search"
+        ng-click="$select.activate()"
+        style="width: 34px;"
+        ondrop="return false;">
+    </li>
+  </ul>
+  <div class="ui-select-dropdown selectize-drop selectize-with-searchbox selectize-drop-active"
+       ng-class="{'selectize-display-none': !$select.open}">
+    <div class="ui-select-choices"></div>
+  </div>
+</div>
